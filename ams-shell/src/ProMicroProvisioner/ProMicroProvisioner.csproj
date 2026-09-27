@@ -6,5 +6,6 @@
     <Content Include="..\..\caterina\Caterina.hex" Link="caterina\Caterina.hex" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="..\..\promicro-provisioner\firmware\arm28\**" Link="firmware\arm28\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="..\..\promicro-provisioner\ArduinoISP.ino" Link="programmer\ArduinoISP.ino" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\promicro-provisioner\PUT-KEY-HERE\**" Link="PUT-KEY-HERE\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>
