@@ -1,4 +1,4 @@
-using System.Diagnostics; using System.Text;
+using System.Diagnostics; using System.Text; using System.IO;
 namespace ProMicroProvisioner.Services;
 public static class ArduinoCliService {
  public static async Task<string> CompileAsync(string keyPath, Models.IdentityProfile id, Action<string> log, CancellationToken ct){

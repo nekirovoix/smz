@@ -1,4 +1,4 @@
-using System.IO.Ports; using Ams.UI.Services;
+using System.IO.Ports; using System.IO; using Ams.UI.Services;
 namespace ProMicroProvisioner.Services;
 public static class ArduinoIspService {
  const byte Eop=0x20,InSync=0x14,Ok=0x10; const int Page=128,BootStart=0x7000;
