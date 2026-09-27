@@ -21,7 +21,13 @@ jobs:
           Invoke-WebRequest $a.browser_download_url -OutFile cli.zip
           Expand-Archive cli.zip package/tools/arduino-cli
           $cli=(Resolve-Path package/tools/arduino-cli/arduino-cli.exe)
-          & $cli config init --dest-file package/tools/arduino-cli/arduino-cli.yaml
+          $root=(Resolve-Path package/tools/arduino-cli).Path.Replace('\\','/')
+          @"
+directories:
+  data: '$root/data'
+  downloads: '$root/downloads'
+  user: '$root/user'
+"@ | Set-Content -Encoding utf8 package/tools/arduino-cli/arduino-cli.yaml
           & $cli core update-index --config-file package/tools/arduino-cli/arduino-cli.yaml
           & $cli core install arduino:avr@1.8.6 --config-file package/tools/arduino-cli/arduino-cli.yaml
       - name: Publish self-contained x64
